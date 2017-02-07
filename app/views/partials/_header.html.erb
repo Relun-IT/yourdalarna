@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+  <%= current_user.email %>
+  <%= link_to t(".menu_log_out"), destroy_user_session_path, method: :delete %>
+
+<% else %>
+  <%= link_to t(".menu_log_in"), new_user_session_path %>
+<% end %>
