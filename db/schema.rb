@@ -10,10 +10,67 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170207125500) do
+ActiveRecord::Schema.define(version: 20170208074735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.text     "description",   default: "", null: false
+    t.integer  "trip_route_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.text     "body",        default: "", null: false
+    t.integer  "activity_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["activity_id"], name: "index_feedbacks_on_activity_id", using: :btree
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.text     "body",        default: "", null: false
+    t.integer  "activity_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["activity_id"], name: "index_questions_on_activity_id", using: :btree
+  end
+
+  create_table "quiestion_options", force: :cascade do |t|
+    t.string   "body",         default: "",    null: false
+    t.boolean  "right_answer", default: false, null: false
+    t.integer  "question_id"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["question_id"], name: "index_quiestion_options_on_question_id", using: :btree
+  end
+
+  create_table "trip_route_activities", force: :cascade do |t|
+    t.integer  "trip_route_id"
+    t.integer  "activity_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["activity_id"], name: "index_trip_route_activities_on_activity_id", using: :btree
+    t.index ["trip_route_id"], name: "index_trip_route_activities_on_trip_route_id", using: :btree
+  end
+
+  create_table "trip_routes", force: :cascade do |t|
+    t.integer  "transport",  null: false
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_trip_routes_on_user_id", using: :btree
+  end
+
+  create_table "trivia", force: :cascade do |t|
+    t.text     "body",        default: "", null: false
+    t.integer  "activity_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["activity_id"], name: "index_trivia_on_activity_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -32,4 +89,12 @@ ActiveRecord::Schema.define(version: 20170207125500) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "activities", "trip_routes"
+  add_foreign_key "feedbacks", "activities"
+  add_foreign_key "questions", "activities"
+  add_foreign_key "quiestion_options", "questions"
+  add_foreign_key "trip_route_activities", "activities"
+  add_foreign_key "trip_route_activities", "trip_routes"
+  add_foreign_key "trip_routes", "users"
+  add_foreign_key "trivia", "activities"
 end
