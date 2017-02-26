@@ -1,0 +1,26 @@
+<section class="container">
+  <section class="whiteframe row center-xs">
+    <h2 class="col-xs-12">Din profil</h2>
+
+    <h2 class="col-xs-12">
+      Dina rutter
+    </h2>
+    <% @trip_routes.each do |trip_route| %>
+      <section class="col-xs-12">
+        <%= link_to trip_route.id, trip_route %>
+      </section>
+    <% end %>
+
+    <h2>
+      Skapa en ny rutt
+    </h2>
+
+    <section class="row center-xs col-xs-12">
+      <%= fa_icon "heart" %>
+      <%= fa_icon "bicycle" %>
+      <%= fa_icon "car" %>
+    </section>
+
+    <%= render "trip_routes/form", trip_route: @trip_route %>
+  </section>
+</section>

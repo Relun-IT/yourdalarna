@@ -1,7 +1,16 @@
-<% if user_signed_in? %>
-  <%= current_user.email %>
-  <%= link_to t(".menu_log_out"), destroy_user_session_path, method: :delete %>
+<section class="header row middle-xs">
+  <% if user_signed_in? %>
+    <h2 class="col-xs">
+      <%= link_to current_user.email, current_user, class: "lighten" %>
+    </h2>
 
-<% else %>
-  <%= link_to t(".menu_log_in"), new_user_session_path %>
-<% end %>
+    <%= link_to destroy_user_session_path, method: :delete do %>
+      <span class="btn btn-alert col-xs-1">
+        <%= t ".menu_log_out" %>
+      </span>
+    <% end %>
+
+  <% else %>
+    <%= link_to t(".menu_log_in"), new_user_session_path %>
+  <% end %>
+</section>

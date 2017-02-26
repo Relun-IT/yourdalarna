@@ -1,0 +1,13 @@
+<h2>Trip route</h2>
+<%= @trip_route.transport %>
+<br>
+
+<h2>Välj aktiviteter</h2>
+
+<%= render "trip_route_activities/form", trip_route: @trip_route, trip_route_activity: @trip_route_activity %>
+
+
+<h2>Kvitto:</h2>
+<% @trip_route_activities.each do |trip_route_activity| %>
+  <%= trip_route_activity.activity %>
+<% end %>

@@ -4,5 +4,6 @@ class Activity < ApplicationRecord
   has_many :trivia, dependent: :destroy
   has_many :feedbacks, dependent: :destroy
 
+  validates :title, presence: true
   validates :description, presence: true
 end

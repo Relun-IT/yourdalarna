@@ -1,0 +1,46 @@
+// Colors
+$primary: #0e1a2d;
+$secondary: #2d8dd6;
+$secondary-dark: #226394;
+$white: #ffffff;
+$green: #2ecc71;
+$blue: #007af3;
+$yellow: #f1c40f;
+$red: #e1393d;
+$dark: #0f0f0f;
+$dark-gray: #a6a6a6;
+$medium-gray: #E1E1E1;
+$light-gray: #ecf0f1;
+$light: #f9fbfb;
+$soft-dark: #22313f;
+$black: #000000;
+$orange: #ec644b;
+$notice-color: #f1c40f;
+$alert-color: #e67e22;
+$transparent: rgba(0, 0, 0, 0.1);
+
+// Shadows
+$shadow: 0 1px 3px 0 rgba($black, 0.1), 0 1px 1px 0 rgba($black, 0.04), 0 2px
+1px -1px rgba($black, 0.02);
+
+$breakpoints: (
+  'small': (min-width: 426px),
+  'medium': (min-width: 768px),
+  'large': (min-width: 1023px),
+  'huge': (min-width: 1240px),
+);
+
+@mixin respond-to($breakpoint) {
+  $raw-query: map-get($breakpoints, $breakpoint);
+
+  @if $raw-query {
+    $query: if(type-of($raw-query) == 'string', unquote($raw-query), inspect($raw-query));
+
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error 'No value found for `#{$breakpoint}`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  }
+}
