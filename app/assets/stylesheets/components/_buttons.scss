@@ -7,6 +7,9 @@
   font-size: 0.9rem;
   padding: 1em;
   text-transform: uppercase;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 
   @include respond-to("medium") {
     font-size: 0.8rem;

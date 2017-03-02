@@ -9,6 +9,8 @@
 
 //Layouts
 @import "layouts/header";
+@import "layouts/user";
+@import "layouts/landing";
 
 //Components
 @import "components/container";
@@ -16,3 +18,4 @@
 @import "components/buttons";
 @import "components/lighten";
 @import "components/activity";
+@import "components/spacing";

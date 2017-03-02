@@ -1,27 +1,37 @@
+<section class="user-wallpaper">
+</section>
+
 <section class="container">
-  <section class="whiteframe row center-xs">
-    <h2 class="col-xs-12">Din profil</h2>
+  <section class="row center-xs between-md">
+    <section class="col-xs-12 col-md-7 row whiteframe center-xs start-md">
+      <%= image_tag @user.avatar(:square), class: "user-wallpaper-avatar" %>
 
-    <h2 class="col-xs-12">
-      Dina rutter
-    </h2>
-
-    <% @trip_routes.each do |trip_route| %>
-      <section class="col-xs-12">
-        <%= link_to trip_route.created_at.strftime("%d %B %Y"), trip_route %>
-      </section>
-    <% end %>
-
-    <h2>
-      Skapa en ny rutt
-    </h2>
-
-    <section class="row center-xs col-xs-12">
-      <%= fa_icon "heart" %>
-      <%= fa_icon "bicycle" %>
-      <%= fa_icon "car" %>
+      <h2 class="col-xs-12">
+        <%= @user.email %>
+      </h2>
     </section>
 
-    <%= render "trip_routes/form", trip_route: @trip_route %>
+    <section class="col-xs-12 col-md md-left-margin-gt-lg row center-xs whiteframe">
+      <h2>
+        Skapa en ny rutt
+      </h2>
+
+      <section class="col-xs-12">
+        <%= render "trip_routes/form", trip_route: @trip_route %>
+      </section>
+    </section>
+
+    <section class="col-xs-12 row center-xs whiteframe">
+      <h2 class="col-xs-12">
+        Dina rutter
+      </h2>
+
+      <% @trip_routes.each do |trip_route| %>
+        <section class="col-xs-12">
+          <%= link_to trip_route.created_at.strftime("%d %B %Y"), trip_route %>
+          <%= trip_route.transport %>
+        </section>
+      <% end %>
+    </section>
   </section>
 </section>

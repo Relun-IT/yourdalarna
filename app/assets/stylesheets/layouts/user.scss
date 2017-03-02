@@ -1,0 +1,18 @@
+.user-wallpaper {
+  background: linear-gradient(to right, transparentize($dark, 0.6),
+  transparentize($dark, 0.6)), image-url("user/wallpaper.jpg");
+  background-size: cover;
+  height: 250px;
+  width: 100%;
+  padding: 0.5em;
+
+  @include respond-to("large") {
+    height: 400px;
+  }
+}
+
+.user-wallpaper-avatar {
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba($black, 0.1);
+  margin-top: -100px;
+}

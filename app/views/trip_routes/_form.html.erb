@@ -1,4 +1,4 @@
 <%= simple_form_for trip_route do |f| %>
-  <%= f.input :transport %>
-  <%= f.button :submit %>
+  <%= f.input :transport, collection: TripRoute.transports.keys %>
+  <%= f.button :submit, class: "btn btn-success md-margin" %>
 <% end %>

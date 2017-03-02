@@ -1,8 +1,8 @@
 <section class="header row middle-xs">
   <% if user_signed_in? %>
-    <h2 class="col-xs">
+    <span class="col-xs">
       <%= link_to current_user.email, current_user, class: "lighten" %>
-    </h2>
+    </span>
 
     <%= link_to destroy_user_session_path, method: :delete do %>
       <span class="btn btn-alert col-xs-1">
