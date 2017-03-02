@@ -1,0 +1,8 @@
+.landing-wrapper {
+  background: linear-gradient(to right, transparentize($dark, 0.6),
+  transparentize($dark, 0.6)), image-url("landing/wallpaper.jpg");
+  background-size: cover;
+  height: 100%;
+  padding: 0.5em;
+  margin-top: -77px;
+}
