@@ -5,9 +5,10 @@
     <h2 class="col-xs-12">
       Dina rutter
     </h2>
+
     <% @trip_routes.each do |trip_route| %>
       <section class="col-xs-12">
-        <%= link_to trip_route.id, trip_route %>
+        <%= link_to trip_route.created_at.strftime("%d %B %Y"), trip_route %>
       </section>
     <% end %>
 

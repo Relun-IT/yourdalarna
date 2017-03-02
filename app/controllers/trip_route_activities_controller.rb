@@ -15,6 +15,6 @@ class TripRouteActivitiesController < ApplicationController
   private
 
   def trip_route_activity_params
-    params.require(:trip_route_activity).permit(:activity)
+    params.require(:trip_route_activity).permit(:activity_id)
   end
 end
