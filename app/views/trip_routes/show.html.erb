@@ -1,22 +1,36 @@
-<h2>Trip route</h2>
-<%= @trip_route.transport %>
-<br>
+<section class="container">
+  <section class="whiteframe col-xs-12">
+    <%= @trip_route.transport %>
+    <h2>Välj aktiviteter</h2>
+  </section>
 
-<h2>Välj aktiviteter</h2>
+  <section class="row">
+    <section class="col-xs-12 row activities-wrapper center-xs">
+      <% @activities.each do |activity| %>
+        <section class="col-xs-12 col-md-4 activity-wrapper row middle-xs center-xs">
+          <section style="background-image:
+            linear-gradient(
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)
+            ),
+            url('<%= activity.image %>');", class="activity">
 
-<section class="row">
-  <% @activities.each do |activity| %>
-    <section class="activity col-xs-12">
-      <%= image_tag activity.image, class: "activity-image" %>
-      <%= activity.title %>
+            <span class="activity-title">
+              <%= activity.title %>
+            </span>
+          </section>
+
+          <%= fa_icon "angle-right", class: "col-xs activity-arrow" %>
+        </section>
+      <% end %>
     </section>
+  </section>
+
+  <%= render "trip_route_activities/form", trip_route: @trip_route, trip_route_activity: @trip_route_activity %>
+
+
+  <h2>Kvitto:</h2>
+  <% @trip_route_activities.each do |trip_route_activity| %>
+    <%= trip_route_activity.activity.title %>
   <% end %>
 </section>
-
-<%= render "trip_route_activities/form", trip_route: @trip_route, trip_route_activity: @trip_route_activity %>
-
-
-<h2>Kvitto:</h2>
-<% @trip_route_activities.each do |trip_route_activity| %>
-  <%= trip_route_activity.activity.title %>
-<% end %>
