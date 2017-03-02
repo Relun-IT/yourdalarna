@@ -1,0 +1,7 @@
+<h2>Skapa en ny trip!</h2>
+
+<% @activities.each do |activity| %>
+  <%= activity.title %>
+<% end %>
+
+<%= render "form", trip_route: @trip_route %>

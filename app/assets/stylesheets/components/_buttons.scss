@@ -1,0 +1,46 @@
+.btn {
+  background-color: $primary;
+  border: 0;
+  border-radius: 4px;
+  color: $white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 1em;
+  text-transform: uppercase;
+
+  @include respond-to("medium") {
+    font-size: 0.8rem;
+  }
+
+  &-alert {
+    background-color: $red;
+    color: $white;
+
+    a {
+      color: $white;
+    }
+  }
+
+  &-white {
+    background-color: $white;
+    color: $black;
+  }
+
+  &-success {
+    background-color: $green;
+  }
+
+  &-secondary {
+    background-color: $secondary;
+  }
+
+  &-transparent {
+    background-color: $transparent;
+    border: 1px solid $light-gray;
+
+    &:hover {
+      background-color: $secondary;
+      border: 1px solid $secondary;
+    }
+  }
+}
