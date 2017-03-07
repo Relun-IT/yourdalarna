@@ -3,7 +3,12 @@ class TripRoutesController < ApplicationController
     @trip_route = TripRoute.find params[:id]
     @trip_route_activity = TripRouteActivity.new
     @trip_route_activities = @trip_route.trip_route_activities
-    @activities = Activity.all
+
+    if current_user.address.present?
+      @activities = Activity.near([current_user.latitude, current_user.longitude], @trip_route.transport, units: :km)
+    else
+      @activities = Activity.all
+    end
   end
 
   def new

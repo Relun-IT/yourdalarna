@@ -7,6 +7,9 @@ class Activity < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
 
+  geocoded_by :address
+  after_validation :geocode
+
   has_attached_file :image, styles: {
     thumb: "35x35#",
     square: "200x200#",

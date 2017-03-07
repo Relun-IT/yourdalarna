@@ -9,6 +9,15 @@
       <h2 class="col-xs-12">
         <%= @user.email %>
       </h2>
+      <section class="row col-xs-12">
+        <span class="md-left-margin"> Vad är din nuvarande address? </span>
+        <section class="col-xs-12 md-margin">
+          <%= simple_form_for @user do |f| %>
+            <%= f.input :address, label: false %>
+            <%= f.submit "Uppdatera address", class: "btn btn-success md-top-margin" %>
+          <% end %>
+        </section>
+      </section>
     </section>
 
     <section class="col-xs-12 col-md md-left-margin-gt-lg row center-xs whiteframe">
