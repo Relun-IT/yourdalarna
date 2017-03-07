@@ -6,21 +6,29 @@
 
   <section class="row">
     <section class="col-xs-12 row activities-wrapper center-xs">
-      <% @activities.each do |activity| %>
-        <section class="col-xs-12 col-md-4 activity-wrapper row middle-xs center-xs">
-          <section style="background-image:
-            linear-gradient(
-            rgba(0, 0, 0, 0.3),
-            rgba(0, 0, 0, 0.3)
-            ),
-            url('<%= activity.image %>');", class="activity">
+      <% @activities.each_with_index do |activity, index| %>
+        <section class="col-xs-12 col-md-4 activity-wrapper">
 
-            <span class="activity-title">
-              <%= activity.title %>
-            </span>
+          <section class="activity-header row middle-xs">
+            <section style="background-image:
+              linear-gradient(
+              rgba(0, 0, 0, 0.3),
+              rgba(0, 0, 0, 0.3)
+              ),
+              url('<%= activity.image %>');", class="activity">
+
+              <span class="activity-title">
+                <%= activity.title %>
+              </span>
+            </section>
+
+            <%= fa_icon "angle-right", class: "col-xs activity-arrow" %>
           </section>
 
-          <%= fa_icon "angle-right", class: "col-xs activity-arrow" %>
+          <section class="activity-content">
+            <%= activity.description %>
+            <%= image_tag activity.image(:square) %>
+          </section>
         </section>
       <% end %>
     </section>
@@ -28,9 +36,10 @@
 
   <%= render "trip_route_activities/form", trip_route: @trip_route, trip_route_activity: @trip_route_activity %>
 
-
-  <h2>Kvitto:</h2>
-  <% @trip_route_activities.each do |trip_route_activity| %>
-    <%= trip_route_activity.activity.title %>
-  <% end %>
+  <section class="col-xs-12 whiteframe">
+    <h2>Kvitto:</h2>
+    <% @trip_route_activities.each do |trip_route_activity| %>
+      <%= trip_route_activity.activity.title %>
+    <% end %>
+  </section>
 </section>
