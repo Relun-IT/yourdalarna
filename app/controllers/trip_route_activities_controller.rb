@@ -12,6 +12,12 @@ class TripRouteActivitiesController < ApplicationController
     redirect_to :back
   end
 
+  def destroy
+    @trip_route_activity = TripRouteActivity.find params[:id]
+    @trip_route_activity.destroy
+    redirect_to :back
+  end
+
   private
 
   def trip_route_activity_params
