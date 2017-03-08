@@ -17,3 +17,11 @@
     width: 100%;
   }
 }
+
+.question-option {
+  margin: 0.2em;
+
+  .option-target {
+    background-color: $blue;
+  }
+}
