@@ -3,6 +3,11 @@ class TripRoutesController < ApplicationController
     @trip_route = TripRoute.find params[:id]
     @trip_route_activity = TripRouteActivity.new
     @trip_route_activities = @trip_route.trip_route_activities
+    @hash = Gmaps4rails.build_markers(@trip_route_activities) do |trip_route, marker|
+      marker.lat trip_route.activity.latitude
+      marker.lng trip_route.activity.longitude
+      marker.infowindow trip_route.activity.title.capitalize
+    end
 
     if current_user.address.present?
       @activities = Activity.near([current_user.latitude, current_user.longitude], @trip_route.transport, units: :km)
