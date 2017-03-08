@@ -1,0 +1,61 @@
+<section style="background-image:
+  linear-gradient(
+  rgba(0, 0, 0, 0.3),
+  rgba(0, 0, 0, 0.3)
+  ),
+  url('<%= @activity.image %>');", class="activity-wallpaper row center-xs middle-xs">
+
+  <section class="col-xs-12 col-md-8">
+    <h2>
+      <%= @activity.title %>
+    </h2>
+
+    <%= @activity.description %>
+  </section>
+</section>
+
+<section class="row center-xs">
+
+  <section class="col-xs-12 col-md-8 whiteframe row center-xs">
+    <h2>Fun facts</h2>
+
+    <% @trivium.each do |trivia| %>
+      <%= render "trivia", trivia: trivia %>
+    <% end %>
+  </section>
+
+  <section class="col-xs-12 col-md-8 whiteframe row center-xs">
+    <h2>Questions</h2>
+
+    <% @questions.each do |question| %>
+      <%= render "question", question: question %>
+    <% end %>
+  </section>
+
+  <section class="col-xs-12 col-md-8 whiteframe row center-xs">
+      <h2 class="col-xs-12">
+        Images
+      </h2>
+
+    <section class="col-xs-12 row center-xs">
+      <% @images.each do |image| %>
+        <section class="col-xs-6 col-sm-4 col-md-3 col-lg-2 activity-image-wrapper">
+          <%= render "image", image: image %>
+        </section>
+      <% end %>
+    </section>
+
+    <section class="col-xs-12 row center-xs">
+      <h2 class="col-xs-12">
+        Ladda upp en egen bild!
+      </h2>
+
+      <section class="col-xs-12">
+        <%= simple_form_for [@activity, @activity_image] do |f| %>
+          <%= f.input :image %>
+          <%= f.button :submit, class: "btn btn-success md-margin" %>
+        <% end %>
+      </section>
+    </section>
+  </section>
+</section>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170308073127) do
+ActiveRecord::Schema.define(version: 20170308103700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,17 @@ ActiveRecord::Schema.define(version: 20170308073127) do
     t.string   "address"
   end
 
+  create_table "activity_images", force: :cascade do |t|
+    t.integer  "activity_id"
+    t.integer  "user_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
   create_table "feedbacks", force: :cascade do |t|
     t.text     "body",        default: "", null: false
     t.integer  "activity_id"
@@ -38,21 +49,21 @@ ActiveRecord::Schema.define(version: 20170308073127) do
     t.index ["activity_id"], name: "index_feedbacks_on_activity_id", using: :btree
   end
 
+  create_table "question_options", force: :cascade do |t|
+    t.string   "body",         default: "",    null: false
+    t.boolean  "right_answer", default: false, null: false
+    t.integer  "question_id"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["question_id"], name: "index_question_options_on_question_id", using: :btree
+  end
+
   create_table "questions", force: :cascade do |t|
     t.text     "body",        default: "", null: false
     t.integer  "activity_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["activity_id"], name: "index_questions_on_activity_id", using: :btree
-  end
-
-  create_table "quiestion_options", force: :cascade do |t|
-    t.string   "body",         default: "",    null: false
-    t.boolean  "right_answer", default: false, null: false
-    t.integer  "question_id"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.index ["question_id"], name: "index_quiestion_options_on_question_id", using: :btree
   end
 
   create_table "trip_route_activities", force: :cascade do |t|
@@ -106,9 +117,11 @@ ActiveRecord::Schema.define(version: 20170308073127) do
   end
 
   add_foreign_key "activities", "trip_routes"
+  add_foreign_key "activity_images", "activities"
+  add_foreign_key "activity_images", "users"
   add_foreign_key "feedbacks", "activities"
+  add_foreign_key "question_options", "questions"
   add_foreign_key "questions", "activities"
-  add_foreign_key "quiestion_options", "questions"
   add_foreign_key "trip_route_activities", "activities"
   add_foreign_key "trip_route_activities", "trip_routes"
   add_foreign_key "trip_routes", "users"

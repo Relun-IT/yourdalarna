@@ -15,9 +15,9 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem "devise"
-gem "rails_admin"
 gem "font-awesome-rails"
 gem "simple_form"
+gem "rails_admin"
 gem "autoprefixer-rails"
 gem "paperclip", git: "https://github.com/thoughtbot/paperclip", ref: "523bd46c768226893f23889079a7aa9c73b57d68"
 gem "geocoder"

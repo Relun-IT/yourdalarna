@@ -1,0 +1,19 @@
+.activity-wallpaper {
+  background-size: cover;
+  height: 250px;
+  width: 100%;
+  padding: 0.5em;
+  color: $white;
+
+  @include respond-to("large") {
+    height: 400px;
+  }
+}
+
+.activity-image-wrapper {
+  padding: 0.5em;
+
+  img {
+    width: 100%;
+  }
+}
