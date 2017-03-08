@@ -1,0 +1,74 @@
+<section class="container">
+  <section class="col-xs-12">
+    <%= @trip_route.transport %>
+    <h2>Välj aktiviteter</h2>
+  </section>
+
+  <section class="row">
+    <section class="col-xs-12 row activities-wrapper center-xs">
+      <% @activities.each_with_index do |activity, index| %>
+
+        <section class="col-xs-12 col-md-4 activity-wrapper">
+          <section class="activity-header row middle-xs">
+            <section style="background-image:
+              linear-gradient(
+              rgba(0, 0, 0, 0.3),
+              rgba(0, 0, 0, 0.3)
+              ),
+              url('<%= activity.image %>');", class="activity">
+
+              <span class="activity-title">
+                <%= activity.title %>
+              </span>
+            </section>
+
+            <%= fa_icon "angle-right", class: "col-xs activity-arrow" %>
+          </section>
+
+          <section class="activity-content">
+            <%= activity.description %>
+            <%= image_tag activity.image(:square) %>
+
+            <%= simple_form_for [@trip_route, @trip_route_activity] do |f| %>
+              <%= f.hidden_field :activity_id, value: activity.id %>
+              <%= f.button :submit, class: "btn btn-success md-margin" %>
+            <% end %>
+          </section>
+        </section>
+      <% end %>
+    </section>
+  </section>
+
+  <section class="col-xs-12">
+    <h2>Valda aktiviteter</h2>
+    <section class="col-xs-12 row activities-wrapper center-xs">
+      <% @trip_route_activities.each do |trip_route_activity| %>
+
+        <section class="col-xs-12 col-md-4 activity-wrapper">
+          <section class="activity-header row middle-xs">
+            <section style="background-image:
+              linear-gradient(
+              rgba(0, 0, 0, 0.3),
+              rgba(0, 0, 0, 0.3)
+              ),
+              url('<%= trip_route_activity.activity.image %>');", class="activity">
+
+              <span class="activity-title">
+                <%= trip_route_activity.activity.title %>
+              </span>
+            </section>
+
+            <%= link_to (fa_icon "times"), trip_route_trip_route_activity_path(@trip_route, trip_route_activity), method: :delete, class: "activity-times col-xs" %>
+          </section>
+        </section>
+      <% end %>
+    </section>
+  </section>
+
+  <section class="row center-xs md-margin">
+    <%= simple_form_for @trip_route do |f| %>
+      <%= f.hidden_field :active, value: true %>
+      <%= f.button :submit, class: "btn btn-success md-margin" %>
+    <% end %>
+  </section>
+</section>

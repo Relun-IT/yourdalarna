@@ -1,0 +1,28 @@
+<h2> AKTIV </h2>
+
+<section class="row center-xs">
+  <section class="col-xs-12 row center-xs">
+    <section class="map" id="trip_route_map">
+    </section>
+  </section>
+
+  <% @trip_route_activities.each do |trip_route_activity| %>
+    <section class="col-xs-12 col-md-4 activity-wrapper">
+      <section class="activity-header row middle-xs">
+        <section style="background-image:
+          linear-gradient(
+          rgba(0, 0, 0, 0.3),
+          rgba(0, 0, 0, 0.3)
+          ),
+          url('<%= trip_route_activity.activity.image %>');", class="activity">
+
+          <span class="activity-title">
+            <%= trip_route_activity.activity.title %>
+          </span>
+        </section>
+
+        <%= link_to (fa_icon "times"), trip_route_trip_route_activity_path(@trip_route, trip_route_activity), method: :delete, class: "activity-times col-xs" %>
+      </section>
+    </section>
+  <% end %>
+</section>

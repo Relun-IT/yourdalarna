@@ -4,4 +4,6 @@ class TripRoute < ApplicationRecord
 
   validates :transport, presence: true
   validates :user, presence: true
+
+  scope :by_date, -> { order(created_at: :desc) }
 end
