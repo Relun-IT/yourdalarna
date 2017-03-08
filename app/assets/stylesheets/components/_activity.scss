@@ -1,9 +1,58 @@
+.activities-wrapper {
+  @include respond-to("medium") {
+    padding: 0;
+  }
+}
+
+.activity-wrapper {
+  background-color: $white;
+  margin-top: 2em;
+  padding: 0;
+  max-height: 105px;
+
+  @include respond-to("medium") {
+    margin: 1em;
+  }
+}
+
 .activity {
   background-color: $white;
-  margin: 1em;
+  width: 80%;
+  padding: 2.5em;
+
+  &-title {
+    color: $white;
+    font-size: 1.5em;
+  }
 
   &-image {
     height: 100%;
-    width: 20%;
+    max-height: 100px;
+  }
+
+  &-arrow {
+    font-size: 3.5em;
+
+    &.arrow-expanded {
+      transform: rotate(90deg);
+    }
+  }
+
+  &-times {
+    font-size: 3.5em;
+    color: $red;
+  }
+}
+
+.activity-content {
+  display: none;
+
+  &.content-expanded {
+    display: block;
+    background-color: $white;
+    font-size: 1em;
+    padding: 2em;
+    transform: translate(0, 0);
+    box-shadow: 0 1px 2px rgba($black, 0.1);
   }
 }
