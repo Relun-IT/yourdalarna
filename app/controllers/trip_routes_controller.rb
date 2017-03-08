@@ -28,9 +28,15 @@ class TripRoutesController < ApplicationController
     redirect_to @trip_route
   end
 
+  def update
+    @trip_route = TripRoute.find params[:id]
+    @trip_route.update trip_route_params
+    redirect_to @trip_route
+  end
+
   private
 
   def trip_route_params
-    params.require(:trip_route).permit(:transport, :trip_route_activities).merge(user: current_user)
+    params.require(:trip_route).permit(:transport, :trip_route_activities, :active).merge(user: current_user)
   end
 end
