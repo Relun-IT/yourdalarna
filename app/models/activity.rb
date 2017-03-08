@@ -3,6 +3,7 @@ class Activity < ApplicationRecord
   has_many :questions, dependent: :destroy
   has_many :trivia, dependent: :destroy
   has_many :feedbacks, dependent: :destroy
+  has_many :activity_images, dependent: :destroy
 
   validates :title, presence: true
   validates :description, presence: true

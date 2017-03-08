@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   root "home#index"
   resources :users, only: [:show, :update]
-  resources :activities, only: [:show]
+  resources :activities, only: [:show] do
+    resources :activity_images, only: [:new, :create]
+  end
   resources :trip_routes, only: [:new, :create, :show, :update] do
     resources :trip_route_activities, only: [:new, :create, :destroy]
   end
