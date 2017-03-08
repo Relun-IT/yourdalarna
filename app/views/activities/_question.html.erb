@@ -1,3 +1,18 @@
-<section class="col-xs-12">
+<section class="col-xs-12 col-md-6 md-top-margin">
   <%= question.body %>
+</section>
+
+<section class="col-xs-12 row center-xs">
+  <% question.question_options.each do |question_option| %>
+    <% if question_option.right_answer? %>
+      <span class="btn btn-yellow col-xs-12 col-md-6 question-option ro">
+        <%= question_option.body %>
+      </span>
+
+    <% else %>
+      <span class="btn btn-yellow col-xs-12 col-md-6 question-option">
+        <%= question_option.body %>
+      </span>
+    <% end %>
+  <% end %>
 </section>

@@ -15,7 +15,6 @@
 </section>
 
 <section class="row center-xs">
-
   <section class="col-xs-12 col-md-8 whiteframe row center-xs">
     <h2>Fun facts</h2>
 
@@ -25,17 +24,23 @@
   </section>
 
   <section class="col-xs-12 col-md-8 whiteframe row center-xs">
-    <h2>Questions</h2>
+    <h2 class="col-xs-12">
+      Questions
+    </h2>
 
     <% @questions.each do |question| %>
       <%= render "question", question: question %>
     <% end %>
+
+    <span class="btn btn-success submit-quiz md-top-margin">
+      Visa svar
+    </span>
   </section>
 
   <section class="col-xs-12 col-md-8 whiteframe row center-xs">
-      <h2 class="col-xs-12">
-        Images
-      </h2>
+    <h2 class="col-xs-12">
+      Images
+    </h2>
 
     <section class="col-xs-12 row center-xs">
       <% @images.each do |image| %>
