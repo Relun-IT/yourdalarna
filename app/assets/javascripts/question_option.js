@@ -1,4 +1,15 @@
 $(document).on('turbolinks:load', function() {
+  $(".submit-quiz").on("click", function(event) {
+    $(".question-option").off("click");
+
+    var right_answers = $(".ro");
+    var wrong_answers = $(".btn-secondary"); 
+    right_answers.removeClass("btn-yellow");
+    right_answers.addClass("btn-success");
+    wrong_answers.removeClass("btn-secondary");
+    wrong_answers.addClass("btn-alert");
+  });
+
   $(".question-option").on("click", function(event) {
 
     var option = $(event.target);
@@ -15,14 +26,5 @@ $(document).on('turbolinks:load', function() {
       option.removeClass("btn-secondary");
       option.toggleClass("btn-yellow");
     }
-  });
-
-  $(".submit-quiz").on("click", function(event) {
-    var right_answers = $(".ro");
-    var wrong_answers = $(".btn-secondary"); 
-    right_answers.removeClass("btn-yellow");
-    right_answers.addClass("btn-success");
-    wrong_answers.removeClass("btn-secondary");
-    wrong_answers.addClass("btn-alert");
   });
 });
