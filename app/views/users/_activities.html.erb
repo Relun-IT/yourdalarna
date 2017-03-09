@@ -3,8 +3,12 @@
 </h2>
 
 <% @activities.each do |activity| %>
-  <section class="col-xs-12 row middle-xs">
+  <section class="col-xs-12 row middle-xs activity-box">
     <%= image_tag activity.activity.image(:square), class: "activity-sm" %>
-    <%= activity.activity.title %>
+    <%= link_to activity.activity do %>
+      <h3 class="activity-box-title darken">
+        <%= activity.activity.title %>
+      </h3>
+    <% end %>
   </section>
 <% end %>
