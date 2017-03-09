@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @images = current_user.activity_images
     @latest_trip_route = current_user.trip_routes.latest
     @activities = @latest_trip_route.trip_route_activities.top_three
+    @events = Event.all
   end
 
   def update
