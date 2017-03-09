@@ -63,4 +63,16 @@
       </section>
     </section>
   </section>
+
+  <section class="col-xs-12 col-md-8 whiteframe row center-xs">
+    <h2 class="col-xs-12">
+      Recensioner
+    </h2>
+
+    <section class="col-xs-12 row center-xs">
+      <% @feedbacks.each do |feedback| %>
+        <%= render "feedback", feedback: feedback %>
+      <% end %>
+    </section>
+  </section>
 </section>
