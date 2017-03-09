@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :trip_routes, dependent: :destroy
+  has_many :feedbacks, dependent: :destroy
 
   has_attached_file :avatar, styles: {
     thumb: "35x35#",

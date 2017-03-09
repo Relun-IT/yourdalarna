@@ -5,5 +5,7 @@ class ActivitiesController < ApplicationController
     @questions = @activity.questions.order("RANDOM()").first(3)
     @images = @activity.activity_images
     @activity_image = ActivityImage.new
+    @feedbacks = @activity.feedbacks.first_four_by_date
+    @feedback = Feedback.new
   end
 end
