@@ -9,8 +9,8 @@ class TripRoutesController < ApplicationController
       marker.infowindow trip_route.activity.title.capitalize
     end
 
-    if current_user.address.present?
-      @activities = Activity.near([current_user.latitude, current_user.longitude], @trip_route.transport, units: :km)
+    if @trip_route.address.present?
+      @activities = Activity.near([@trip_route.latitude, @trip_route.longitude], @trip_route.transport, units: :km)
     else
       @activities = Activity.all
     end
@@ -42,6 +42,6 @@ class TripRoutesController < ApplicationController
   private
 
   def trip_route_params
-    params.require(:trip_route).permit(:transport, :trip_route_activities, :active).merge(user: current_user)
+    params.require(:trip_route).permit(:transport, :trip_route_activities, :active, :address).merge(user: current_user)
   end
 end
