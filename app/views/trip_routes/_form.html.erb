@@ -1,4 +1,4 @@
 <%= simple_form_for trip_route do |f| %>
-  <%= f.input :transport, collection: [["Gång", 10], ["Cykel", 20], ["Bil", 40]] %>
+  <%= f.input :transport, collection: [["Walk", 10], ["Bike", 20], ["Car", 40]] %>
   <%= f.button :submit, class: "btn btn-success md-margin" %>
 <% end %>

@@ -16,7 +16,7 @@
 
 <section class="row center-xs">
   <section class="col-xs-12 col-md-8 whiteframe row center-xs">
-    <h2>Fun facts</h2>
+    <h2><%= t ".fun_title" %></h2>
 
     <% @trivium.each do |trivia| %>
       <%= render "trivia", trivia: trivia %>
@@ -25,7 +25,7 @@
 
   <section class="col-xs-12 col-md-8 whiteframe row center-xs">
     <h2 class="col-xs-12">
-      Questions
+      <%= t ".question_title" %>
     </h2>
 
     <% @questions.each do |question| %>
@@ -33,13 +33,13 @@
     <% end %>
 
     <span class="btn btn-success submit-quiz md-top-margin">
-      Visa svar
+      <%= t ".show_answer_text" %>
     </span>
   </section>
 
   <section class="col-xs-12 col-md-8 whiteframe row center-xs">
     <h2 class="col-xs-12">
-      Images
+      <%= t ".gallery_title" %>
     </h2>
 
     <section class="col-xs-12 row center-xs">
@@ -52,7 +52,7 @@
 
     <section class="col-xs-12 row center-xs">
       <h2 class="col-xs-12">
-        Ladda upp en egen bild!
+        <%= t ".upload_image_title" %>
       </h2>
 
       <section class="col-xs-12">
@@ -66,7 +66,7 @@
 
   <section class="col-xs-12 col-md-8 whiteframe row center-xs">
     <h2 class="col-xs-12">
-      Recensioner
+      <%= t ".review_title" %>
     </h2>
 
     <section class="col-xs-12 row center-xs">
@@ -77,7 +77,7 @@
 
     <section class="col-xs-12">
       <%= simple_form_for [@activity, @feedback] do |f| %>
-        <%= f.input :body, label: false, placeholder: "Skriv en recension!", input_html: {rows: 10} %>
+        <%= f.input :body, label: false, placeholder: t ".placeholder", input_html: {rows: 10} %>
         <%= f.button :submit, class: "btn btn-success md-margin" %>
       <% end %>
     </section>

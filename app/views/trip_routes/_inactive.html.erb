@@ -1,7 +1,7 @@
 <section class="container">
   <section class="col-xs-12">
     <%= @trip_route.transport %>
-    <h2>Välj aktiviteter</h2>
+    <h2><%= t ".select_activities" %></h2>
   </section>
 
   <section class="row">
@@ -40,7 +40,7 @@
   </section>
 
   <section class="col-xs-12">
-    <h2>Valda aktiviteter</h2>
+    <h2><%= t ".selected_activities" %></h2>
     <section class="col-xs-12 row activities-wrapper center-xs">
       <% @trip_route_activities.each do |trip_route_activity| %>
 
