@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+
   has_attached_file :image, styles: {
     thumb: "35x35#",
     square: "200x200#",
@@ -9,4 +10,5 @@ class Event < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode
+
 end
