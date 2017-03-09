@@ -1,0 +1,64 @@
+<script src="//maps.google.com/maps/api/js?key=AIzaSyCqtDEcW-KAkp5E7_DADBNOimpgEDZz1p4"></script>
+<script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
+<script src='//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' type='text/javascript'></script>
+
+<section style="background-image:
+  linear-gradient(
+  rgba(0, 0, 0, 0.7),
+  rgba(0, 0, 0, 0.7)
+  ),
+  url('<%= @event.image %>');", class="event-wallpaper row center-xs middle-xs">
+
+
+  <section class="col-xs-12">
+    <h1>
+      <%= @event.name %>
+    </h1>
+    <%= l(@event.start_at, format: "%A %d %B, %H:%M") %>
+  </section>
+</section>
+
+<section class="container event-overflow">
+  <section class="row between-md">
+    <section class="col-xs-12 col-md-12 no-padding">
+      <section class="col-xs-12 whiteframe row center-xs">
+        <%= @event.description %>
+      </section>
+    </section>
+
+  </section>
+  <div class="map-div">
+    <div id="directions" class="gmap"></div>
+  </div>
+
+  <script>
+  $(document).on('turbolinks:load', function() {
+    var handler = Gmaps.build('Google');
+    handler.buildMap({
+      provider: {
+        zoom: 9,
+        center: {lat: 60.4876438, lng: 15.4260946}
+      },
+      internal: {id: 'directions'}
+      }, function(){
+
+      if(navigator.geolocation)
+        navigator.geolocation.getCurrentPosition(displayOnMap);
+    });
+
+    function displayOnMap(position){
+      var marker = handler.addMarker({
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
+        infowindow: "YOUR LOCATION"
+      });
+      var jsonCollection = <%= raw @hash.to_json %>;
+      var markers = handler.addMarkers(jsonCollection);
+
+
+      handler.fitMapToBounds();
+      handler.map.centerOn(marker);
+    };
+  });
+  </script>
+</section>

@@ -17,7 +17,7 @@
 
   /*<script type="text/javascript">
   handler = Gmaps.build('Google');
-  handler.buildMap({
+    handler.buildMap({
       provider: {
         disableDefaultUI: true
         // pass in other Google Maps API options here

@@ -1,0 +1,35 @@
+.darken {
+  color: $dark;
+}
+
+.muted {
+  color: $dark-gray;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.event {
+
+  &-overflow {
+    margin-top: 0;
+
+    @include respond-to("large") {
+      margin-top: -50px;
+    }
+  }
+
+  &-wallpaper {
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+    padding: 0.5em;
+    color: $white;
+
+    @include respond-to("large") {
+      height: 300px;
+    }
+  }
+
+}
