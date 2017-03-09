@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :update]
   resources :activities, only: [:show] do
     resources :activity_images, only: [:new, :create]
+    resources :feedbacks, only: [:new, :create]
   end
   resources :trip_routes, only: [:new, :create, :show, :update] do
     resources :trip_route_activities, only: [:new, :create, :destroy]

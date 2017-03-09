@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170308103700) do
+ActiveRecord::Schema.define(version: 20170309081344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,7 +46,9 @@ ActiveRecord::Schema.define(version: 20170308103700) do
     t.integer  "activity_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.integer  "user_id"
     t.index ["activity_id"], name: "index_feedbacks_on_activity_id", using: :btree
+    t.index ["user_id"], name: "index_feedbacks_on_user_id", using: :btree
   end
 
   create_table "question_options", force: :cascade do |t|
@@ -112,6 +114,8 @@ ActiveRecord::Schema.define(version: 20170308103700) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "address"
+    t.string   "first_name",             default: "", null: false
+    t.string   "surname",                default: "", null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
@@ -120,6 +124,7 @@ ActiveRecord::Schema.define(version: 20170308103700) do
   add_foreign_key "activity_images", "activities"
   add_foreign_key "activity_images", "users"
   add_foreign_key "feedbacks", "activities"
+  add_foreign_key "feedbacks", "users"
   add_foreign_key "question_options", "questions"
   add_foreign_key "questions", "activities"
   add_foreign_key "trip_route_activities", "activities"
