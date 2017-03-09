@@ -2,7 +2,7 @@
 <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
 <script src='//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' type='text/javascript'></script>
 
-<h2> AKTIV </h2>
+<h2> <%= t ".active_activities" %> </h2>
 
 <section class="row center-xs">
   <section class="col-xs-12 row center-xs">
@@ -25,7 +25,7 @@
           </span>
         </section>
 
-        <%= link_to "aktivera", trip_route_activity.activity %>
+        <%= link_to (t ".show_activity"), trip_route_activity.activity %>
       </section>
     </section>
   <% end %>

@@ -1,17 +1,13 @@
 <section class="landing-wrapper row center-xs middle-xs">
   <section class="col-xs-12 col-sm-6">
     <h2 class="lighten">
-      Welcome to Dalarna!
+      <%= t ".welcome_title" %>
     </h2>
 
     <p class="lighten lg-margin">
-      jdoawdj awd d awd awd awd awd wdawdj aowij dawoijdawo idjawodjaw
-      awodjawiojd awoidjawodjaw oi jawodijawdoiawjdaoijawdi jaoiawj wa
-      awdioj wadoawjdoawidjawo ijaw doa wj doiwajd oawiwjd awoij awoi jaw
-      awdoawjdoaiwjd oawijd awoijiaw oiawjd oiajd aoijd aoijd oajd aoijd a
-      awd iojodaj oiawj dawoijdaowjawoijdaw
+      <%= t ".welcome_text" %>
     </p>
 
-    <%= link_to "Skapa ett konto!", new_user_registration_path, class: "btn btn-success" %>
+    <%= link_to (t ".create_new_account_btn"), new_user_registration_path, class: "btn btn-success" %>
   </section>
 </section>
