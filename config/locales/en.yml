@@ -18,12 +18,18 @@ en:
       title: "Log in"
 
   activities:
-    show:
+    trivium:
       fun_title: "fun facts"
+
+    quiz:
       question_title: "questions"
       show_answer_text: "Show answers"
+
+    album:
       gallery_title: "Gallery"
       upload_image_title: "Upload your own image"
+
+    feedback:
       review_title: "Reviews"
       placeholder: "Write your review here"
 
