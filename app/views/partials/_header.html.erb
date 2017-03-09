@@ -1,7 +1,8 @@
 <section class="header row middle-xs">
+  <%= link_to (image_tag "logo.png", class: "logo"), current_user %>
+
   <% if user_signed_in? %>
     <span class="col-xs">
-      <%= link_to current_user.email, current_user, class: "lighten" %>
     </span>
 
     <%= link_to destroy_user_session_path, method: :delete do %>
