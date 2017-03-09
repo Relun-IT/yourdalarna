@@ -3,7 +3,10 @@ class UsersController < ApplicationController
 
   def show
     @trip_route = TripRoute.new
-    @trip_routes = TripRoute.all.where(user: current_user).by_date
+    @trip_routes = current_user.trip_routes.by_date
+    @images = current_user.activity_images
+    @latest_trip_route = current_user.trip_routes.latest
+    @activities = @latest_trip_route.trip_route_activities.top_three
   end
 
   def update

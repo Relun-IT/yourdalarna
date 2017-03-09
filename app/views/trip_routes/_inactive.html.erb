@@ -68,7 +68,7 @@
   <section class="row center-xs md-margin">
     <%= simple_form_for @trip_route do |f| %>
       <%= f.hidden_field :active, value: true %>
-      <%= f.button :submit, class: "btn btn-success md-margin" %>
+      <%= f.submit (t ".create_btn"), class: "btn btn-success md-margin" %>
     <% end %>
   </section>
 </section>
