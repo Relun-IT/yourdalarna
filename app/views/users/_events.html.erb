@@ -1,0 +1,26 @@
+<h2>
+  Upcoming events in Dalarna
+</h2>
+
+<% @events.each do |event| %>
+  <section class="row col-xs-12 md-top-margin center-xs pointer">
+    <%= link_to event_path(event.id) do %>
+      <section class="col-xs-12 col-lg-4">
+        <%= image_tag event.image(:square) %>
+      </section>
+
+      <section class="col-xs-12 col-md-8">
+        <h3 class="no-margin lg-top-margin darken">
+          <%= event.name %>
+        </h3>
+        <span class="italic no-pad muted">
+          <%= l(event.start_at, format: "%A %d %B, %H:%M") %>
+        </span>
+        <section class="col-xs-12 md-top-margin start-xs darken">
+          <%= event.description.truncate(200) %>
+        </section>
+      <% end %>
+    </section>
+
+  </section>
+<% end %>
