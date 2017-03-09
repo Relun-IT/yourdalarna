@@ -1,0 +1,13 @@
+<h2 class="col-xs-12 md-margin">
+  Bildgalleri
+</h2>
+
+<section class="col-xs-12 row center-xs">
+  <% @images.each do |image| %>
+    <section class="col-xs-6 col-sm-4 col-md-3 activity-image-wrapper row start-xs">
+      <%= link_to image.image.url, class: "fancybox", rel: "activity-images" do %>
+        <%= image_tag image.image(:square) %>
+      <% end %>
+    </section>
+  <% end %>
+</section>

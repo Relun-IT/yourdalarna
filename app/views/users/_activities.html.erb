@@ -1,0 +1,10 @@
+<h2 class="col-xs-12">
+  Dina senaste aktiviteter
+</h2>
+
+<% @activities.each do |activity| %>
+  <section class="col-xs-12 row middle-xs">
+    <%= image_tag activity.activity.image(:square), class: "activity-sm" %>
+    <%= activity.activity.title %>
+  </section>
+<% end %>
