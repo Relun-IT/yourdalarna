@@ -12,10 +12,10 @@ en:
   home:
     index:
       welcome_title: "Welcome to YourDalarna"
-      welcome_text: "Dalarna is one of Swedens most beautiful places.
-       We are here to give you and your family a whole new experience of Dalarna.
-       Its beauties, rich history and a lot of activities is now accessable in a fun and new way, all on your phone!"
-       create_new_account_btn: "Create a free account!"
+      welcome_text: "Dalarna is one of Swedens most beautiful places. We are here to give you and your family a whole new experience of Dalarna.Its beauties, rich history and a lot of activities is now accessable in a fun and new way, all on your phone!"
+      create_new_account_btn: "Create a free account"
+    header:
+      title: "Log in"
 
   activities:
     show:
@@ -28,16 +28,17 @@ en:
       placeholder: "Write your review here"
 
 
-    trip_routes:
-      active:
-        active_activities: "Active activities"
-        show_activity: "Show activity"
-      inactive:
-        select_activities: "Select activities"
-        selected_activities: "Selected activities"
+  trip_routes:
+    active:
+      active_activities: "Active activities"
+      show_activity: "Show activity"
+    inactive:
+      select_activities: "Select activities"
+      selected_activities: "Selected activities"
+      create_btn: "Create your trip"
 
-    users:
-      show:
-        update_adress: "Update your adress"
-        create_new_route_title: "Create a new route"
-        your_routes_title: "Your routes"
+  users:
+    show:
+      update_adress: "Update your adress"
+      create_new_route_title: "Create a new route"
+      your_routes_title: "Your routes"

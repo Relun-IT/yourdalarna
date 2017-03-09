@@ -77,7 +77,7 @@
 
     <section class="col-xs-12">
       <%= simple_form_for [@activity, @feedback] do |f| %>
-        <%= f.input :body, label: false, placeholder: t ".placeholder", input_html: {rows: 10} %>
+        <%= f.input :body, label: false, placeholder: (t ".placeholder"), input_html: {rows: 10} %>
         <%= f.button :submit, class: "btn btn-success md-margin" %>
       <% end %>
     </section>
