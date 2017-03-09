@@ -23,6 +23,7 @@ gem "paperclip", git: "https://github.com/thoughtbot/paperclip", ref: "523bd46c7
 gem "geocoder"
 gem "gmaps4rails"
 gem "fancybox2-rails"
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'byebug', platform: :mri
