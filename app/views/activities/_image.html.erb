@@ -1,1 +1,3 @@
-<%= image_tag image.image(:square) %>
+<%= link_to image.image.url, class: "fancybox", rel: "activity-images" do %>
+  <%= image_tag image.image(:square) %>
+<% end %>
