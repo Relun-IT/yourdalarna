@@ -1,0 +1,7 @@
+<h2><%= t ".fun_title" %></h2>
+
+<% @trivium.each do |trivia| %>
+  <section class="col-xs-12">
+    <%= trivia.body %>
+  </section>
+<% end %>

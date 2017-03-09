@@ -1,10 +1,25 @@
-<section class="col-xs-12 col-md-8">
-  <p>
-    <span class="italic">
-      <%= feedback.body %>
-    </span>
-    -
-    <%= feedback.user.first_name %>
-    <%= feedback.user.surname %>
-  </p>
+<h2 class="col-xs-12">
+  <%= t ".review_title" %>
+</h2>
+
+<section class="col-xs-12 row center-xs">
+  <% @feedbacks.each do |feedback| %>
+    <section class="col-xs-12">
+      <p>
+        <span class="italic">
+          <%= feedback.body %>
+        </span>
+        -
+        <%= feedback.user.first_name %>
+        <%= feedback.user.surname %>
+      </p>
+    </section>
+  <% end %>
+</section>
+
+<section class="col-xs-12">
+  <%= simple_form_for [@activity, @feedback] do |f| %>
+    <%= f.input :body, label: false, placeholder: (t ".placeholder"), input_html: {rows: 10} %>
+    <%= f.button :submit, class: "btn btn-success md-margin" %>
+  <% end %>
 </section>

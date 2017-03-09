@@ -14,72 +14,28 @@
   </section>
 </section>
 
-<section class="row center-xs">
-  <section class="col-xs-12 col-md-8 whiteframe row center-xs">
-    <h2><%= t ".fun_title" %></h2>
+<section class="container container-overflow">
+  <section class="row between-md">
 
-    <% @trivium.each do |trivia| %>
-      <%= render "trivia", trivia: trivia %>
-    <% end %>
-  </section>
+    <section class="col-xs-12 col-md-8 no-padding">
+      <section class="col-xs-12 whiteframe row center-xs">
+        <%= render "trivium" %>
+      </section>
 
-  <section class="col-xs-12 col-md-8 whiteframe row center-xs">
-    <h2 class="col-xs-12">
-      <%= t ".question_title" %>
-    </h2>
+      <section class="col-xs-12 whiteframe row center-xs md-top-margin">
+        <%= render "quiz" %>
+      </section>
 
-    <% @questions.each do |question| %>
-      <%= render "question", question: question %>
-    <% end %>
-
-    <span class="btn btn-success submit-quiz md-top-margin">
-      <%= t ".show_answer_text" %>
-    </span>
-  </section>
-
-  <section class="col-xs-12 col-md-8 whiteframe row center-xs">
-    <h2 class="col-xs-12">
-      <%= t ".gallery_title" %>
-    </h2>
-
-    <section class="col-xs-12 row center-xs">
-      <% @images.each do |image| %>
-        <section class="col-xs-6 col-sm-4 col-md-3 col-lg-2 activity-image-wrapper row start-xs">
-          <%= render "image", image: image %>
-        </section>
-      <% end %>
-    </section>
-
-    <section class="col-xs-12 row center-xs">
-      <h2 class="col-xs-12">
-        <%= t ".upload_image_title" %>
-      </h2>
-
-      <section class="col-xs-12">
-        <%= simple_form_for [@activity, @activity_image] do |f| %>
-          <%= f.input :image %>
-          <%= f.button :submit, class: "btn btn-success md-margin" %>
-        <% end %>
+      <section class="col-xs-12 whiteframe row center-xs md-top-margin">
+        <%= render "album" %>
       </section>
     </section>
-  </section>
 
-  <section class="col-xs-12 col-md-8 whiteframe row center-xs">
-    <h2 class="col-xs-12">
-      <%= t ".review_title" %>
-    </h2>
-
-    <section class="col-xs-12 row center-xs">
-      <% @feedbacks.each do |feedback| %>
-        <%= render "feedback", feedback: feedback %>
-      <% end %>
+    <section class="col-xs-12 col-md md-left-margin-gt-lg no-padding">
+      <section class="col-xs-12 whiteframe row center-xs">
+        <%= render "feedback" %>
+      </section>
     </section>
 
-    <section class="col-xs-12">
-      <%= simple_form_for [@activity, @feedback] do |f| %>
-        <%= f.input :body, label: false, placeholder: (t ".placeholder"), input_html: {rows: 10} %>
-        <%= f.button :submit, class: "btn btn-success md-margin" %>
-      <% end %>
-    </section>
   </section>
 </section>

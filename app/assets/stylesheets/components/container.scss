@@ -2,6 +2,14 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+
+  &-overflow {
+    margin-top: 0;
+
+    @include respond-to("large") {
+      margin-top: -150px;
+    }
+  }
 }
 
 .row {

@@ -1,0 +1,35 @@
+<h2 class="col-xs-12">
+  <%= t ".gallery_title" %>
+</h2>
+
+<section class="col-xs-12 row center-xs">
+  <% @images.each do |image| %>
+    <section class="col-xs-6 col-sm-4 col-md-3 col-lg-2 activity-image-wrapper row start-xs">
+      <%= link_to image.image.url, class: "fancybox", rel: "activity-images" do %>
+        <%= image_tag image.image(:square) %>
+      <% end %>
+
+      <span class="xs-side-pad">
+        <%= image.user.first_name %>
+        <%= image.user.surname %>
+      </span>
+
+      <span class="xs-side-pad">
+        <%= image.created_at.strftime("%F") %>
+      </span>
+    </section>
+  <% end %>
+</section>
+
+<section class="col-xs-12 row center-xs">
+  <h2 class="col-xs-12">
+    <%= t ".upload_image_title" %>
+  </h2>
+
+  <section class="col-xs-12">
+    <%= simple_form_for [@activity, @activity_image] do |f| %>
+      <%= f.input :image %>
+      <%= f.button :submit, class: "btn btn-success md-margin" %>
+    <% end %>
+  </section>
+</section>
