@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require underscore
 //= require gmaps/google
+//= require fancybox
 //= require_tree .
