@@ -1,4 +1,5 @@
 <%= simple_form_for trip_route do |f| %>
+  <%= f.input :address, label: "What's your current address?" %>
   <%= f.input :transport, collection: [["Walk", 10], ["Bike", 20], ["Car", 40]] %>
   <%= f.button :submit, class: "btn btn-success md-margin" %>
 <% end %>
