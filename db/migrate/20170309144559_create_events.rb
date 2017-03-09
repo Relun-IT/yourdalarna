@@ -3,7 +3,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
     create_table :events do |t|
       t.string :name, null: false
       t.text :description, null: false
-      t.text :address, null: false
+      t.string :address, null: false
       t.float :latitude, null: false
       t.float :longitude, null: false
       t.datetime :start_at, null: false

@@ -1,9 +1,15 @@
 .header {
   background-color: $dark;
-  padding: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
 }
 
 .transparent-header {
   padding: 2em;
   color: $white;
+}
+
+.logo {
+  width: 100px;
+  height: 100%;
 }
