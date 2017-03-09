@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :activity_images, only: [:new, :create]
     resources :feedbacks, only: [:new, :create]
   end
-  resources :trip_routes, only: [:new, :create, :show, :update] do
+  resources :trip_routes, only: [:show, :update, :new, :create] do
     resources :trip_route_activities, only: [:new, :create, :destroy]
   end
 end

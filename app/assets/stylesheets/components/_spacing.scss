@@ -18,12 +18,24 @@
   }
 }
 
+.lg-left-margin-gt-lg {
+  margin-left: 0;
+
+  @include respond-to("large") {
+    margin-left: 2em;
+  }
+}
+
 .md-left-margin {
   margin-left: 1em;
 }
 
 .md-top-margin {
   margin-top: 1em;
+}
+
+.lg-top-margin {
+  margin-top: 1.5em;
 }
 
 .no-padding {

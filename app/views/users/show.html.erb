@@ -2,37 +2,51 @@
 </section>
 
 <section class="container">
-  <section class="row center-xs between-md">
-    <section class="col-xs-12 col-md-7 row whiteframe center-xs start-md">
-      <%= image_tag @user.avatar(:square), class: "user-wallpaper-avatar" %>
+  <section class="row between-md">
+    <section class="col-xs-12 col-md-8">
+      <section class="col-xs-12 row whiteframe center-xs start-md">
+        <section class="col-xs-12 col-md-6">
+          <%= image_tag @user.avatar(:square), class: "user-wallpaper-avatar" %>
 
-      <h2 class="col-xs-12">
-        <%= @user.email %>
-      </h2>
-    </section>
+          <h2 class="col-xs-12">
+            <%= @user.email %>
+          </h2>
+        </section>
 
-    <section class="col-xs-12 col-md md-left-margin-gt-lg row center-xs whiteframe">
-      <h2>
-        <%= t ".create_new_route_title" %>
-      </h2>
+        <section class="col-xs-12 col-md">
+          <h2>
+            <%= t ".create_new_route_title" %>
+          </h2>
 
-      <section class="col-xs-12">
-        <%= render "trip_routes/form", trip_route: @trip_route %>
+          <section class="col-xs-12">
+            <%= render "trip_routes/form", trip_route: @trip_route %>
+          </section>
+        </section>
+      </section>
+
+      <section class="col-xs-12 row center-xs whiteframe">
+        <%= render "images" %>
       </section>
     </section>
 
-    <section class="col-xs-12 row center-xs whiteframe">
-      <h2 class="col-xs-12">
-        <%= t ".your_routes_title" %>
-      </h2>
+    <section class="col-xs-12 col-md md-left-margin-gt-lg">
+      <section class="col-xs-12 row start-xs middle-xs no-padding">
+        <%= render "activities" %>
+      </section>
 
-      <% @trip_routes.each do |trip_route| %>
-        <section class="col-xs-12">
-          <%= link_to trip_route.created_at.strftime("%d %B %Y"), trip_route %>
-          <%= trip_route.transport %>
-          <%= trip_route.active %>
-        </section>
-      <% end %>
+      <section class="col-xs-12 row center-xs whiteframe">
+        <h2 class="col-xs-12">
+          <%= t ".your_routes_title" %>
+        </h2>
+
+        <% @trip_routes.each do |trip_route| %>
+          <section class="col-xs-12">
+            <%= link_to trip_route.created_at.strftime("%d %B %Y"), trip_route %>
+            <%= trip_route.transport %>
+            <%= trip_route.active %>
+          </section>
+        <% end %>
+      </section>
     </section>
   </section>
 </section>

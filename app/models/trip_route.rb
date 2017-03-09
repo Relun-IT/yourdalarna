@@ -5,8 +5,9 @@ class TripRoute < ApplicationRecord
   validates :transport, presence: true
   validates :user, presence: true
 
-  scope :by_date, -> { order(created_at: :desc) }
-
   geocoded_by :address
   after_validation :geocode
+
+  scope :by_date, -> { order(created_at: :desc) }
+  scope :latest, -> { order(created_at: :desc).first }
 end
