@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 20170309144559) do
   create_table "events", force: :cascade do |t|
     t.string   "name",               null: false
     t.text     "description",        null: false
-    t.text     "address",            null: false
     t.string   "address",            null: false
     t.float    "latitude",           null: false
     t.float    "longitude",          null: false
