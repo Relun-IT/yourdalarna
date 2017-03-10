@@ -61,4 +61,12 @@
   var handler = Gmaps.build('Google');
   handler.buildMap({ internal: {id: 'directions'}}, function(){
     directionsDisplay.setMap(handler.getMap());
-  });*/
+  });
+
+  working code for current:
+  var marker = handler.addMarker({
+    lat: position.coords.latitude,
+    lng: position.coords.longitude,
+    infowindow: "YOUR LOCATION"
+  });
+  */
