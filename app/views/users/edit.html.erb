@@ -8,16 +8,21 @@
       <section class="row center-xs">
         <%= simple_form_for @user do |f| %>
           <section class="col-xs-12">
-            <%= f.input :first_name, label: false %>
+            <%= f.input :first_name, label: false, placeholder: "First name" %>
           </section>
 
           <section class="col-xs-12">
-            <%= f.input :surname, label: false %>
+            <%= f.input :surname, label: false, placeholder: "Surname" %>
           </section>
-          <%= f.input :avatar %>
 
-          <section class="col-xs-12">
-            <%= f.button :submit, class: "btn btn-success md-margin" %>
+          <section class="col-xs-12 md-top-margin">
+            <%= f.input :avatar %>
+          </section>
+
+          <section class="col-xs-12 md-top-margin">
+            <%= button_tag(type: 'submit', class: "btn btn-success md-top-margin") do %>
+              <%= fa_icon "wrench", text: "Update your profile" %>
+            <% end %>
           </section>
         <% end %>
       </section>
