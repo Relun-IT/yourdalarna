@@ -61,4 +61,40 @@
   var handler = Gmaps.build('Google');
   handler.buildMap({ internal: {id: 'directions'}}, function(){
     directionsDisplay.setMap(handler.getMap());
-  });*/
+  });
+
+  working code for current:
+  var marker = handler.addMarker({
+    lat: position.coords.latitude,
+    lng: position.coords.longitude,
+    infowindow: "YOUR LOCATION"
+  });
+
+
+
+
+  <script>
+  $(document).on('turbolinks:load', function() {
+    var handler = Gmaps.build('Google');
+    handler.buildMap({
+      provider: {
+        zoom: 9,
+        center: {lat: 60.4876438, lng: 15.4260946}
+      },
+      internal: {id: 'directions'}
+      }, function(){
+
+      if(navigator.geolocation)
+        navigator.geolocation.getCurrentPosition(displayOnMap);
+    });
+
+    function displayOnMap(position){
+
+      var jsonCollection = <%= raw @hash.to_json %>;
+      var markers = handler.addMarkers(jsonCollection);
+
+      handler.map.centerOn(marker);
+    };
+  });
+  </script>
+  */

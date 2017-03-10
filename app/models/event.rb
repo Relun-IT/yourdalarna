@@ -10,4 +10,6 @@ class Event < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode
+
+  scope :by_date, -> { order(start_at: :asc) }
 end

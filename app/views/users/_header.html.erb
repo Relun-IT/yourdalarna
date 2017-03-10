@@ -6,11 +6,11 @@
     <%= @user.surname %>
   </h3>
 
- <%= link_to edit_user_path, class: "col-xs-12" do %>
-   <%= fa_icon "cog" %>
-   <%= t ".edit_user" %>
- <% end %>
-
+  <section class="col-xs-12">
+    <%= link_to edit_user_path, class: "col-xs-12 btn btn-success" do %>
+      <%= fa_icon "cog", text: "Edit profile" %>
+    <% end %>
+  </section>
 </section>
 
 <section class="col-xs-12 col-md row center-xs end-md">

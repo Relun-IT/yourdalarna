@@ -3,15 +3,21 @@
     <%= t ".current_position_title" %>
   </section>
 
-  <section class="col-xs-12">
+  <section class="col-xs-12 center-xs">
     <%= f.input :address, label: false %>
   </section>
 
-  <section class="col-xs-12">
-    <%= f.input :transport, collection: [["Walk", 10], ["Bike", 20], ["Car", 40]] %>
+  <section class="col-xs-12 center-xs">
+    <%= "What is your transport?" %>
   </section>
 
-  <section class="col-xs-12">
-    <%= f.button :submit, class: "btn btn-success md-margin" %>
+  <section class="col-xs-12 center-xs">
+    <%= f.input :transport, label: false, collection: [["Walk", 10], ["Bike", 20], ["Car", 40]] %>
+  </section>
+
+  <section class="col-xs-12 center-xs">
+    <%= button_tag(type: 'submit', class: "btn btn-success md-top-margin") do %>
+      <%= fa_icon "plus", text: "Create route" %>
+    <% end %>
   </section>
 <% end %>

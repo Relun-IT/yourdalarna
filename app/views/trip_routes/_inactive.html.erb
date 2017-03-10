@@ -25,8 +25,14 @@
           </section>
 
           <section class="activity-content">
+            <section class="col-xs-12 center-xs">
+              <h3>
+                <%= activity.title %>
+              </h3>
+              <%= image_tag activity.image(:square) %>
+            </section>
+
             <%= activity.description %>
-            <%= image_tag activity.image(:square) %>
 
             <%= simple_form_for [@trip_route, @trip_route_activity] do |f| %>
               <%= f.hidden_field :activity_id, value: activity.id %>

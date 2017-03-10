@@ -1,5 +1,5 @@
 <h2 class="col-xs-12 md-margin">
-  Bildgalleri
+  Imagegallery
 </h2>
 
 <section class="col-xs-12 row center-xs">
@@ -12,6 +12,8 @@
       <%= link_to "remove", activity_image_path(image), method: :delete, class: "hideable-link hideable-link-active" %>
     </section>
   <% end %>
+  
+  <%= will_paginate @images %>
 </section>
 
 <span class="btn md-margin visible-btn">
