@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   root "home#index"
-  resources :users, only: [:show, :update]
+  resources :users, only: [:show, :update, :edit]
   resources :events, only: [:show]
   resources :activities, only: [:show] do
     resources :activity_images, only: [:new, :create]

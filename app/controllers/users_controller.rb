@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :user, only: [:show, :update]
+  before_action :user, only: [:show, :update, :edit]
 
   def show
     @trip_route = TripRoute.new
@@ -8,6 +8,9 @@ class UsersController < ApplicationController
     @latest_trip_route = current_user.trip_routes.latest
     @activities = @latest_trip_route.trip_route_activities.top_three
     @events = Event.all
+  end
+
+  def edit
   end
 
   def update
@@ -20,7 +23,12 @@ class UsersController < ApplicationController
   end
 
   private
+
   def user
     @user = User.find params[:id]
+  end
+
+  def user_params
+    params.require(:user).permit(:first_name, :surname, :avatar)
   end
 end

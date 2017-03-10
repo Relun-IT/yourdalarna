@@ -1,0 +1,26 @@
+<section class="container">
+  <section class="row center-xs md-margin">
+    <section class="col-xs-12 col-md-6 whiteframe">
+      <h2>
+        Edit User
+      </h2>
+
+      <section class="row center-xs">
+        <%= simple_form_for @user do |f| %>
+          <section class="col-xs-12">
+            <%= f.input :first_name, label: false %>
+          </section>
+
+          <section class="col-xs-12">
+            <%= f.input :surname, label: false %>
+          </section>
+          <%= f.input :avatar %>
+
+          <section class="col-xs-12">
+            <%= f.button :submit, class: "btn btn-success md-margin" %>
+          </section>
+        <% end %>
+      </section>
+    </section>
+  </section>
+</section>
