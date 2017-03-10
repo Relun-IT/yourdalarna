@@ -8,7 +8,8 @@
   background-color: $white;
   margin-top: 2em;
   padding: 0;
-  max-height: 105px;
+  max-height: 95px;
+  border-radius: 5px;
 
   @include respond-to("medium") {
     margin: 1em;
@@ -19,6 +20,8 @@
   background-color: $white;
   width: 80%;
   padding: 2.5em;
+  max-height: 95px;
+  border-radius: 5px 0px 0px 5px;
 
   &-title {
     color: $white;
@@ -46,6 +49,10 @@
   &-sm {
     width: 130px;
   }
+}
+
+.activity-active {
+  background-color: $primary;
 }
 
 .activity-content {
