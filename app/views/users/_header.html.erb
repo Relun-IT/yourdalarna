@@ -1,0 +1,24 @@
+<section class="col-xs-12 col-md-6">
+  <%= image_tag @user.avatar(:square), class: "user-wallpaper-avatar" %>
+
+  <h3 class="col-xs">
+    <%= @user.first_name %>
+    <%= @user.surname %>
+  </h3>
+
+ <%= link_to edit_user_path, class: "col-xs-12" do %>
+   <%= fa_icon "cog" %>
+   <%= t ".edit_user" %>
+ <% end %>
+
+</section>
+
+<section class="col-xs-12 col-md row center-xs end-md">
+  <h3>
+    <%= t ".create_new_route_title" %>
+  </h3>
+
+  <section class="col-xs-12 row center-xs end-md">
+    <%= render "trip_routes/form", trip_route: @trip_route %>
+  </section>
+</section>

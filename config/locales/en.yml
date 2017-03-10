@@ -41,8 +41,18 @@ en:
         select_activities: "Select activities"
         selected_activities: "Selected activities"
 
-    users:
-      show:
-        update_adress: "Update your adress"
-        create_new_route_title: "Create a new route"
-        your_routes_title: "Your routes"
+  trip_routes:
+    form:
+      current_position_title: "Whats your current position?"
+
+  users:
+    header:
+      update_adress: "Update your adress"
+      create_new_route_title: "Create a new route"
+      user_edit: "Edit user"
+
+    show:
+      your_routes_title: "Your routes"
+
+  trip_route_true: "Active"
+  trip_route_false: "Inactive"
