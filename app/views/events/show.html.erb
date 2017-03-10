@@ -31,29 +31,23 @@
     <div id="directions" class="gmap"></div>
   </div>
 
-  <script>
-  $(document).on('turbolinks:load', function() {
-    var handler = Gmaps.build('Google');
+  <script type="text/javascript">
+  handler = Gmaps.build('Google');
     handler.buildMap({
       provider: {
         zoom: 9,
         center: {lat: 60.4876438, lng: 15.4260946}
+
       },
-      internal: {id: 'directions'}
-      }, function(){
+      internal: {
+        id: 'directions'
+      }
+    },
 
-      if(navigator.geolocation)
-        navigator.geolocation.getCurrentPosition(displayOnMap);
-    });
-
-    function displayOnMap(position){
-
-      var jsonCollection = <%= raw @hash.to_json %>;
-      var markers = handler.addMarkers(jsonCollection);
-
-      handler.fitMapToBounds();
-      handler.map.centerOn(marker);
-    };
-  });
+    function(){
+      markers = handler.addMarkers(<%=raw @hash.to_json %>);;
+      handler.bounds.extendWith(markers);
+    }
+  );
   </script>
 </section>
