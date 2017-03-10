@@ -20,6 +20,8 @@
 <section class="col-xs-12">
   <%= simple_form_for [@activity, @feedback] do |f| %>
     <%= f.input :body, label: false, placeholder: (t ".placeholder"), input_html: {rows: 5} %>
-    <%= f.button :submit, class: "btn btn-success md-margin" %>
+    <%= button_tag(type: 'submit', class: "btn btn-success md-top-margin") do %>
+      <%= fa_icon "pencil-square-o", text: "Write feedback" %>
+    <% end %>
   <% end %>
 </section>

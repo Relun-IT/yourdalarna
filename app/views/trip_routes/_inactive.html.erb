@@ -1,6 +1,5 @@
 <section class="container">
-  <section class="col-xs-12">
-    <%= @trip_route.transport %>
+  <section class="col-xs-12 center-xs">
     <h2><%= t ".select_activities" %></h2>
   </section>
 
@@ -39,7 +38,7 @@
     </section>
   </section>
 
-  <section class="col-xs-12">
+  <section class="col-xs-12 center-xs">
     <h2><%= t ".selected_activities" %></h2>
     <section class="col-xs-12 row activities-wrapper center-xs">
       <% @trip_route_activities.each do |trip_route_activity| %>
@@ -68,7 +67,9 @@
   <section class="row center-xs md-margin">
     <%= simple_form_for @trip_route do |f| %>
       <%= f.hidden_field :active, value: true %>
-      <%= f.submit (t ".create_btn"), class: "btn btn-success md-margin" %>
+      <%= button_tag(type: 'submit', class: "btn btn-success md-top-margin") do %>
+        <%= fa_icon "play", text: "Start trip" %>
+      <% end %>
     <% end %>
   </section>
 </section>
