@@ -12,9 +12,8 @@
       <%= link_to "remove", activity_image_path(image), method: :delete, class: "hideable-link hideable-link-active" %>
     </section>
   <% end %>
-
-  <%= will_paginate @images %>
 </section>
+<%= will_paginate @images %>
 
 <span class="btn md-margin visible-btn">
   Edit
