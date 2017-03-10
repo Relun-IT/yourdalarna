@@ -1,4 +1,4 @@
-<section class="landing-wrapper row center-xs middle-xs">
+<section class="landing-wrapper row center-xs middle-xs no-margin">
   <section class="whiteframe col-xs-12 col-md-3">
     <h2>Log in</h2>
 
@@ -20,11 +20,13 @@
         </div>
       <% end -%>
 
-      <div class="actions">
-        <%= f.submit "Log in" %>
+      <div class="actions col-xs-12">
+          <%= button_tag(type: 'submit', class: "btn btn-success md-top-margin") do %>
+            <%= fa_icon "sign-in", text: "Login" %>
+          <% end %>
+
+          <%= render "devise/shared/links" %>
       </div>
     <% end %>
-
-    <%= render "devise/shared/links" %>
   </section>
 </section>

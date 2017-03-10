@@ -7,11 +7,14 @@
 
     <%= link_to destroy_user_session_path, method: :delete do %>
       <span class="btn btn-alert col-xs-1">
-        <%= t ".menu_log_out" %>
+        <%= (fa_icon "sign-out", text: t(".menu_log_out")) %>
       </span>
     <% end %>
 
   <% else %>
-    <%= link_to t(".menu_log_in"), new_user_session_path %>
+    <span class="col-xs">
+    </span>
+
+    <%= link_to (fa_icon "sign-in", text: t(".menu_log_in")), new_user_session_path, class: "btn btn-success col-xs col-sm-2 col-md-1 center-xs" %>
   <% end %>
 </section>

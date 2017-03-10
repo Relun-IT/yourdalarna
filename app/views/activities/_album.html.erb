@@ -29,7 +29,9 @@
   <section class="col-xs-12">
     <%= simple_form_for [@activity, @activity_image] do |f| %>
       <%= f.input :image %>
-      <%= f.button :submit, class: "btn btn-success md-margin" %>
+      <%= button_tag(type: 'submit', class: "btn btn-success md-top-margin") do %>
+        <%= fa_icon "cloud-upload", text: "Upload image" %>
+      <% end %>
     <% end %>
   </section>
 </section>
