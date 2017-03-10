@@ -12,6 +12,12 @@ class ActivityImagesController < ApplicationController
     redirect_to :back
   end
 
+  def destroy
+    @activity_image = ActivityImage.find params[:id]
+    @activity_image.destroy
+    redirect_to :back
+  end
+
   private
 
   def activity_image_params

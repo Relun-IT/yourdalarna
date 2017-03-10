@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :activity_images, only: [:new, :create]
     resources :feedbacks, only: [:new, :create]
   end
+  resources :activity_images, only: [:destroy]
   resources :trip_routes, only: [:show, :update, :new, :create] do
     resources :trip_route_activities, only: [:new, :create, :destroy]
   end

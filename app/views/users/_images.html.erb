@@ -8,6 +8,18 @@
       <%= link_to image.image.url, class: "fancybox", rel: "activity-images" do %>
         <%= image_tag image.image(:square) %>
       <% end %>
+
+      <%= link_to "remove", activity_image_path(image), method: :delete, class: "hideable-link hideable-link-active" %>
     </section>
   <% end %>
 </section>
+
+<span class="btn md-margin visible-btn">
+  Edit
+</span>
+
+<span class="btn md-margin done-btn done-btn-inactive">
+  Done
+</span>
+
+
