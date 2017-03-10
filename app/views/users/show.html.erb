@@ -24,17 +24,7 @@
       </section>
 
       <section class="col-xs-12 row center-xs whiteframe">
-        <h2 class="col-xs-12">
-          <%= t ".your_routes_title" %>
-        </h2>
-
-        <% @trip_routes.each do |trip_route| %>
-          <section class="col-xs-12">
-            <%= link_to trip_route.created_at.strftime("%d %B %Y"), trip_route %>
-            <%= trip_route.transport %>
-            <%= t "trip_route_#{trip_route.active}" %>
-          </section>
-        <% end %>
+        <%= render "routes" %>
       </section>
     </section>
   </section>

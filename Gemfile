@@ -25,6 +25,7 @@ gem "geocoder"
 gem "gmaps4rails"
 gem "fancybox2-rails"
 gem 'rails_12factor', group: :production
+gem 'will_paginate', '~> 3.1.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri

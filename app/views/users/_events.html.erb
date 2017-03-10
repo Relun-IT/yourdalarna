@@ -2,7 +2,7 @@
   Upcoming events in Dalarna
 </h2>
 
-<% @events.each do |event| %>
+<% @events.first(3).each do |event| %>
   <section class="row col-xs-12 md-top-margin center-xs pointer">
     <%= link_to event_path(event.id) do %>
       <section class="col-xs-12 col-lg-4">
@@ -24,3 +24,4 @@
 
   </section>
 <% end %>
+<%= will_paginate @events %>

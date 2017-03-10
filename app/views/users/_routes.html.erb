@@ -1,0 +1,24 @@
+<h2 class="col-xs-12">
+  Your Routes
+</h2>
+
+<% @trip_routes.each do |trip_route| %>
+  <section class="col-xs-12">
+    <%= link_to trip_route.created_at.strftime("%d %B %Y"), trip_route %>
+
+    <% if trip_route.transport == 10 %>
+      <%= fa_icon "street-view" %>
+    <% elsif trip_route.transport == 20 %>
+      <%= fa_icon "bicycle" %>
+    <% else %>
+      <%= fa_icon "car" %>
+    <% end %>
+
+    <% if trip_route.active? %>
+      <%= fa_icon "check", class: "success" %>
+    <% else %>
+      <%= fa_icon "times", class: "error" %>
+    <% end %>
+  </section>
+<% end %>
+<%= will_paginate @trip_routes %>

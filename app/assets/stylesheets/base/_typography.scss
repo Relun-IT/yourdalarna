@@ -78,6 +78,22 @@ a {
   color: $black;
 }
 
+.success {
+  color: $green;
+}
+
+.error {
+  color: $red;
+}
+
 .uppercase {
   text-transform: uppercase;
+}
+
+input {
+  padding: 1em;
+  margin-bottom: 0.5em;
+  background-color: #fcf9a1;
+  border-radius: 3px;
+  width: 100%;
 }
