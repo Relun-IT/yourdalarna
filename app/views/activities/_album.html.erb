@@ -17,6 +17,12 @@
       <span class="xs-side-pad">
         <%= image.created_at.strftime("%F") %>
       </span>
+
+      <% if image.user == current_user %>
+        <span class="xs-side-pad">
+          <%= link_to "remove", activity_image_path(image), method: :delete %>
+        </span>
+      <% end %>
     </section>
   <% end %>
 </section>

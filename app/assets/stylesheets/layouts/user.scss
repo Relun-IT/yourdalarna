@@ -34,3 +34,27 @@
     font-size: 1.2em;
   }
 }
+
+.hideable-link {
+  &-active {
+    display: none;
+  }
+
+  &-inactive {
+    display: block;
+  }
+}
+
+.visible-link {
+  display: block;
+}
+
+.done-btn {
+  &-inactive {
+    display: none;
+  }
+
+  &-active {
+    display: block;
+  }
+}
