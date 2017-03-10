@@ -16,14 +16,14 @@
           rgba(0, 0, 0, 0.3),
           rgba(0, 0, 0, 0.3)
           ),
-          url('<%= trip_route_activity.activity.image %>');", class="activity">
+          url('<%= trip_route_activity.activity.image %>');", class="col-xs-9 activity">
 
           <span class="activity-title">
-            <%= trip_route_activity.activity.title %>
+            <%= truncate (trip_route_activity.activity.title), length: 15 %>
           </span>
         </section>
 
-        <%= link_to (fa_icon "map-marker", text: "I'm here"), trip_route_activity.activity, class: "lighten xs-left-margin uppercase" %>
+        <%= link_to (fa_icon "map-marker", text: "I'm here"), trip_route_activity.activity, class: "lighten xs-left-margin uppercase col-xs" %>
       </section>
     </section>
   <% end %>

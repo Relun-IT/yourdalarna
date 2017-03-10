@@ -17,7 +17,7 @@
               url('<%= activity.image %>');", class="activity">
 
               <span class="activity-title">
-                <%= activity.title %>
+                <%= truncate (activity.title), length: 15 %>
               </span>
             </section>
 
@@ -27,7 +27,7 @@
           <section class="activity-content">
             <section class="col-xs-12 center-xs">
               <h3>
-                <%= activity.title %>
+                <%= truncate (activity.title), length: 25 %>
               </h3>
               <%= image_tag activity.image(:square) %>
             </section>
@@ -59,7 +59,7 @@
               url('<%= trip_route_activity.activity.image %>');", class="activity">
 
               <span class="activity-title">
-                <%= trip_route_activity.activity.title %>
+                <%= truncate (trip_route_activity.activity.title), length: 15 %>
               </span>
             </section>
 
