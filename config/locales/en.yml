@@ -18,6 +18,9 @@ en:
       title: "Log in"
 
   activities:
+    show:
+      back_btn: "Back"
+
     trivium:
       fun_title: "fun facts"
 

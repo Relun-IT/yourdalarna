@@ -19,7 +19,17 @@
 
     <section class="col-xs-12 col-md-8 no-padding">
       <section class="col-xs-12 whiteframe row center-xs">
-        <%= render "trivium" %>
+
+        <span class="col-xs-12 row star-xs">
+          <%= link_to :back, class: "btn btn-success col-xs-3" do %>
+            <%= fa_icon "arrow-left" %>
+            <%= t ".back_btn" %>
+          <% end %>
+        </span>
+
+        <span class="col-xs-12">
+          <%= render "trivium" %>
+        </span>
       </section>
 
       <section class="col-xs-12 whiteframe row center-xs md-top-margin">
@@ -36,6 +46,5 @@
         <%= render "feedback" %>
       </section>
     </section>
-
   </section>
 </section>
