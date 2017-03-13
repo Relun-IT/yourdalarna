@@ -4,7 +4,7 @@ class ActivityImagesController < ApplicationController
     @activity_image = @activity.activity_images.new activity_image_params
 
     if @activity_image.save
-      flash[:success] = t ".success"
+      flash[:success] = "Success"
     else
       flash[:error] = @activity_image.errors.full_messages.to_sentence
     end

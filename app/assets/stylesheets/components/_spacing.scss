@@ -55,7 +55,7 @@
   padding: 0;
 
   @include respond-to("medium") {
-    padding: 1em;
+    padding: 0 1em;
   }
 }
 

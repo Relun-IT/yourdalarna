@@ -25,12 +25,14 @@ class TripRoutesController < ApplicationController
     @trip_route = TripRoute.new trip_route_params
 
     if @trip_route.save
-      flash[:success] = t ".success"
+      flash[:success] = "Success"
+      redirect_to @trip_route
+
     else
       flash[:error] = @trip_route.errors.full_messages.to_sentence
+      redirect_to :back
     end
 
-    redirect_to @trip_route
   end
 
   def update

@@ -1,0 +1,47 @@
+$base-spacing: 1.5em !default;
+
+@mixin flash($color) {
+  background-color: $color;
+  color: $white;
+  display: block;
+  font-weight: 600;
+  margin-bottom: $base-spacing / 2;
+  padding: $base-spacing / 2;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  cursor: pointer;
+
+  a {
+    color: darken($color, 70%);
+
+    &:focus,
+    &:hover {
+      color: darken($color, 90%);
+    }
+  }
+}
+
+.flash-leave {
+  transform: translate(0, 200%);
+  transition: all 500ms;
+}
+
+.flash-alert {
+  @include flash(transparentize($alert-color, 0.3));
+}
+
+.flash-error {
+  @include flash(transparentize($red, 0.3));
+}
+
+.flash-notice {
+  @include flash(transparentize($notice-color, 0.3));
+}
+
+.flash-success {
+  @include flash(transparentize($green, 0.3));
+}
