@@ -2,14 +2,16 @@
   Latest activities
 </h2>
 
-<% @activities.each do |activity| %>
-  <section class="col-xs-12 row middle-xs activity-box">
-    <%= image_tag activity.activity.image(:square), class: "activity-sm" %>
+<% if @activities.present? %>
+  <% @activities.each do |activity| %>
+    <section class="col-xs-12 row middle-xs activity-box">
+      <%= image_tag activity.activity.image(:square), class: "activity-sm" %>
 
-    <%= link_to activity.activity do %>
-      <span class="activity-box-title darken">
-        <%= truncate (activity.activity.title), length: 15 %>
-      </span>
-    <% end %>
-  </section>
+      <%= link_to activity.activity do %>
+        <span class="activity-box-title darken">
+          <%= truncate (activity.activity.title), length: 15 %>
+        </span>
+      <% end %>
+    </section>
+  <% end %>
 <% end %>

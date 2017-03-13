@@ -31,10 +31,12 @@ en:
     album:
       gallery_title: "Gallery"
       upload_image_title: "Upload your own image"
+      anonymous: "Anonymous"
 
     feedback:
       review_title: "Reviews"
       placeholder: "Write your review here"
+      anonymous: "Anonymous"
 
     trip_routes:
       active:
