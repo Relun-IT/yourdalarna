@@ -6,6 +6,12 @@
   <% @feedbacks.each do |feedback| %>
     <section class="col-xs-12">
       <p>
+        <% if feedback.user == current_user %>
+          <%= link_to feedback_path(feedback), class: "red", method: :delete do %>
+            <%= fa_icon "times" %>
+          <% end %>
+        <% end %>
+
         <span class="italic">
           <%= feedback.body %>
         </span>

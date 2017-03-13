@@ -12,6 +12,12 @@ class FeedbacksController < ApplicationController
     redirect_to :back
   end
 
+  def destroy
+    @feedback = Feedback.find params[:id]
+    @feedback.destroy
+    redirect_to :back
+  end
+
   private
 
   def feedback_params
