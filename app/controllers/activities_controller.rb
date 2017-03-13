@@ -1,4 +1,6 @@
 class ActivitiesController < ApplicationController
+  after_filter "save_my_previous_url", only: [:new, :show, :create, :update]
+
   def show
     @activity = Activity.find params[:id]
     @trivium = @activity.trivia
@@ -7,5 +9,12 @@ class ActivitiesController < ApplicationController
     @activity_image = ActivityImage.new
     @feedbacks = @activity.feedbacks.first_four_by_date
     @feedback = Feedback.new
+    @back_url = session[:my_previous_url]
+  end
+
+  private
+
+  def save_my_previous_url
+    session[:my_previous_url] = URI(request.referer || '').path
   end
 end
