@@ -4,7 +4,7 @@ class TripRouteActivitiesController < ApplicationController
     @trip_route_activity = @trip_route.trip_route_activities.create trip_route_activity_params
 
     if @trip_route_activity.save
-      flash[:success] = t ".success"
+      flash[:success] = "Success"
     else
       flash[:error] = @trip_route_activity.errors.full_messages.to_sentence
     end

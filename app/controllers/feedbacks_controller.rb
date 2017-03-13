@@ -4,7 +4,7 @@ class FeedbacksController < ApplicationController
     @feedback = @activity.feedbacks.new feedback_params
 
     if @feedback.save
-      flash[:success] = t ".success"
+      flash[:success] = "Success"
     else
       flash[:error] = @feedback.errors.full_messages.to_sentence
     end
