@@ -13,12 +13,17 @@
     </section>
   <% end %>
 </section>
-<%= will_paginate @images %>
 
-<span class="btn md-margin visible-btn">
-  Edit
-</span>
+<section class="col-xs-12 md-top-margin">
+  <%= will_paginate @images %>
+</section>
 
-<span class="btn md-margin done-btn done-btn-inactive">
-  Done
-</span>
+<section class="col-xs-4 md-top-margin">
+  <span class="btn md-margin visible-btn">
+    Edit
+  </span>
+
+  <span class="btn md-margin done-btn done-btn-inactive">
+    Done
+  </span>
+</section>
