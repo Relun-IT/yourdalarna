@@ -8,6 +8,7 @@
 /coverage/*
 /db/*.sqlite3
 /log/*
+/doc/*
 /public/system
 /public/assets
 /tags
