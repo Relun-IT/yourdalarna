@@ -51,6 +51,14 @@
   padding: 0;
 }
 
+.no-padding-md {
+  padding: 0;
+
+  @include respond-to("medium") {
+    padding: 1em;
+  }
+}
+
 .xs-side-pad {
   padding: 0 0.1em;
 }
