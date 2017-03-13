@@ -10,8 +10,13 @@
           <%= feedback.body %>
         </span>
         -
-        <%= feedback.user.first_name %>
-        <%= feedback.user.surname %>
+        <% if feedback.user.first_name.present? or feedback.user.surname.present? %>
+          <%= feedback.user.first_name %>
+          <%= feedback.user.surname %>
+
+        <% else %>
+          <%= t ".anonymous" %>
+        <% end %>
       </p>
     </section>
   <% end %>
